@@ -144,3 +144,9 @@ let salary = {
 }
 // console.log(salary.Ali + salary.Ahmad + salary.Khalid);
 // console.log(salary.Ali * salary.Ahmad * salary.Khalid);
+let game = {
+    name: "Subnautica",
+    release: "14th of May, 2026",
+    sold: "2 millon copies in 12 hours",
+    good: "hell yea",
+}
