@@ -71,10 +71,3 @@ let clone1 = {
 
 let clone2 = structuredClone(clone1);
 // console.log(clone2);
-
-let animes = {
-    name: "365 Days to the Wedding",
-    peak: true,
-    Episodes: 12,
-    Season_s: 1,
-}
