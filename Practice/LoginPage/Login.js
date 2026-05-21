@@ -87,17 +87,3 @@ checkusername.addEventListener('click', function () {
 //         alert("No user found");
 //     }
 // }
-
-let salary = {
-    "Ali": 390,
-    "Ahmad": 400,
-    "Khalid": 500,
-}
-// console.log(salary.Ali + salary.Ahmad + salary.Khalid);
-// console.log(salary.Ali * salary.Ahmad * salary.Khalid);
-let game = {
-    name: "Subnautica",
-    release: "14th of May, 2026",
-    sold: "2 millon copies in 12 hours",
-    good: "hell yea",
-}
