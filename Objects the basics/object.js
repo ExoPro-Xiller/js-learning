@@ -72,12 +72,16 @@ let clone1 = {
 let clone2 = structuredClone(clone1);
 // console.log(clone2);
 
-// Object Methods  => "This"
-let user = {
-    name: "Ahmad",
-    age: 15,
-    thisobject: function(){
-        console.log(this.name)
-    }
+// Object Methods 
+
+// Using "New" keyword
+function user(name, age)  {
+    this.name =  name;
+    this.age = age;
 }
 
+user2 = new user('Ali', 15);
+user3 = new user("Nigga", 19);
+
+console.log(user2.name);
+console.log(user3.age);
