@@ -99,3 +99,9 @@ let Accumulator = new accumulator(1);
 // Accumulator.read();
 // console.log(Accumulator.value);
 
+let address = {
+    house: 28,
+    Area: "Lahore",
+    province: "Punjab",
+}
+console.log(address?.street); // returns undefined as no street is given
