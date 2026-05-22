@@ -79,7 +79,5 @@ let user = {
     thisobject: function(){
         console.log(this.name)
     }
-} 
-user.thisobject();
-
+}
 
