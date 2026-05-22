@@ -71,3 +71,15 @@ let clone1 = {
 
 let clone2 = structuredClone(clone1);
 // console.log(clone2);
+
+// Object Methods  => "This"
+let user = {
+    name: "Ahmad",
+    age: 15,
+    thisobject: function(){
+        console.log(this.name)
+    }
+} 
+user.thisobject();
+
+
