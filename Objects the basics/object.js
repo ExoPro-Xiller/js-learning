@@ -95,7 +95,7 @@ function accumulator(startingvalue) {
 
 }
 let Accumulator = new accumulator(1);
-Accumulator.read();
-Accumulator.read();
-console.log(Accumulator.value);
+// Accumulator.read();
+// Accumulator.read();
+// console.log(Accumulator.value);
 
