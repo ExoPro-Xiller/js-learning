@@ -90,18 +90,21 @@ function accumulator(startingvalue) {
     this.value = startingvalue;
     
     this.read = function(){
-    this.value += Number(prompt("Enter a number to Accumulate", ));
+        this.value += Number(prompt("Enter a number to Accumulate", ));
     };
-
+    
 }
 let Accumulator = new accumulator(1);
 // Accumulator.read();
 // Accumulator.read();
 // console.log(Accumulator.value);
-
-let address = {
-    house: 28,
-    Area: "Lahore",
-    province: "Punjab",
+let userinfo = {
+    name: "Ahmad",
+    Age: 15,
+    address :{
+        house: 28,
+        Area: "Lahore",
+        province: "Punjab",
+    }
 }
-console.log(address?.street); // returns undefined as no street is given
+console.log(userinfo.address?.Area); 
