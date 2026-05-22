@@ -83,5 +83,19 @@ function user(name, age)  {
 user2 = new user('Ali', 15);
 user3 = new user("Nigga", 19);
 
-console.log(user2.name);
-console.log(user3.age);
+// console.log(user2.name);
+// console.log(user3.age);
+
+function accumulator(startingvalue) {
+    this.value = startingvalue;
+    
+    this.read = function(){
+    this.value += Number(prompt("Enter a number to Accumulate", ));
+    };
+
+}
+let Accumulator = new accumulator(1);
+Accumulator.read();
+Accumulator.read();
+console.log(Accumulator.value);
+
