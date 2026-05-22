@@ -108,3 +108,20 @@ let userinfo = {
     }
 }
 console.log(userinfo.address?.Area); 
+
+let myuser = {
+    name: "Ahmad",
+    age: 40,
+    email: "myemail@gmail.com",
+    isLoggedin: false,
+}
+function login(){
+    if(myuser.isLoggedin == false){
+        myuser.isLoggedin = true;
+    }else console.log("Already Logged in")
+}
+function logout(){
+    if(myuser.isLoggedin == true){
+        myuser.isLoggedin = false;
+    }else console.log("Already Logged out");
+        }
