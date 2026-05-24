@@ -59,25 +59,27 @@ function createUserAccount() {
     LoggedState = true;
     ButtonLoggin.style.display = "none";
     accountinputs.style.display = "none";
+
     if (LoggedState) {
         dashboard.style.display = "block";
     }
+
     localStorage.setItem("user", JSON.stringify(newUser));
 }
 
 function togglelogin(){
     if (logininputs.style.display === "block")
+    { 
+        logininputs.style.display = "none";
+    } 
+    else 
         { 
-            logininputs.style.display = "none";
-        } 
-        else 
-            { 
-                logininputs.style.display = "block";
-            }
+            logininputs.style.display = "block";
+        }
             
-            if(accountinputs.style.display == "block"){
-                accountinputs.style.display = "none"
-            }
+        if(accountinputs.style.display == "block"){
+            accountinputs.style.display = "none"
+        }
 }
 
 function handlelogin(){
@@ -106,9 +108,10 @@ function showinfo() {
     }
 
     info.innerHTML = `
-        <p>Name: ${newUser.name}</p>
-        <p>Email: ${newUser.email}</p>
+        <p><b>Name:</b> ${newUser.name}</p>
+        <p><b>Email:</b> ${newUser.email}</p>
     `;
+    
 }
 
 ButtonLogout.addEventListener('click', function () {
