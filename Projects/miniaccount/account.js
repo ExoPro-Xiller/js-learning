@@ -1,4 +1,5 @@
 // Creating an account system
+
 const createaccountbtn = document.getElementById('createaccountbtn');
 const accountinputs = document.getElementById('AccountInputs');
 const name = document.getElementById('Name');
@@ -10,15 +11,24 @@ const dashboard = document.getElementById('dashboard');
 const ButtonLoggin = document.getElementById('ButtonLoggin');
 const ButtonLogout = document.getElementById('ButtonLogout');
 const info = document.getElementById('info');
+const logininputs  = document.getElementById('logininputs');
+const inputuseremail  = document.getElementById('inputuseremail');
+const inputpassword = document.getElementById('inputpassword');
+const loginbtn = document.getElementById('loginbtn');
+const login = document.getElementById('login');
 
 let LoggedState = false;
+
+
 function createaccount() {
     if (accountinputs.style.display == "block") {
 
         accountinputs.style.display = "none";
 
     } else accountinputs.style.display = "block";
-
+    if(logininputs.style.display == "block"){
+        logininputs.style.display = "none";x``
+    }
 }
 function User(name, email, password) {
     this.name = name;
@@ -29,6 +39,7 @@ function User(name, email, password) {
 let newUser;
 
 function createUserAccount() {
+
     if (name.value == "" || email.value == "" || password.value == "" || confirmpassword.value == "") {
         alert("Please Provide the Required Information")
     }
@@ -42,10 +53,10 @@ function createUserAccount() {
         email.value,
         password.value
     );
+     localStorage.setItem("user", JSON.stringify(newUser));
 
     console.log(newUser);
     alert("Account Has Been Successfully created")
-    accountinputs.style.display = "none";
     LoggedState = true;
     ButtonLoggin.style.display = "none";
 
@@ -53,11 +64,37 @@ function createUserAccount() {
         dashboard.style.display = "block";
     }
 }
-function login(){
-    if(newUser){
-        
+
+function togglelogin(){
+    if (logininputs.style.display === "block")
+         { 
+            logininputs.style.display = "none";
+         } 
+    else 
+        { 
+            logininputs.style.display = "block";
+         }
+
+    if(accountinputs.style.display == "block"){
+        accountinputs.style.display = "none"
     }
 }
+
+function handlelogin(){
+        if(!newUser){
+            alert("No User Found");
+            return;
+        }
+        let emailinput = inputuseremail.value;
+        let passwordinput = inputpassword.value;
+        if( (emailinput === newUser.email) && (passwordinput === newUser.password) ){
+            LoggedState = true;
+            dashboard.style.display = "block";
+            ButtonLoggin.style.display = "none";
+            logininputs.style.display = "none";
+        }else alert("Email or Password Incorrect");
+}
+
 
 function showinfo() {
     if (!newUser) {
