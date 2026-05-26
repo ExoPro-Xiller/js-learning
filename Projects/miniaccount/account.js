@@ -18,6 +18,7 @@ const inputuseremail  = document.getElementById('inputuseremail');
 const inputpassword = document.getElementById('inputpassword');
 const loginbtn = document.getElementById('loginbtn');
 const login = document.getElementById('login');
+const delaccount = document.getElementById('delaccount');
 
 
 
@@ -121,3 +122,13 @@ ButtonLogout.addEventListener('click', function () {
     window.location.reload();
 }
 )
+
+delaccount.addEventListener('click', function() {
+    let conf = confirm("Are You Sure You Want To Delete Your Account?");
+    if(conf == true){
+        localStorage.clear();
+        window.location.reload();
+    } else {
+        return;
+    }
+})
