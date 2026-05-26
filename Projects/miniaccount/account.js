@@ -117,7 +117,6 @@ function showinfo() {
 ButtonLogout.addEventListener('click', function () {
     if (confirm("Are Your Sure You Want To Log Out?")) {
         LoggedState = false;
-        localStorage.clear();
     } else return;
     window.location.reload();
 }
