@@ -13,8 +13,8 @@ const dashboard = document.getElementById('dashboard');
 const ButtonLoggin = document.getElementById('ButtonLoggin');
 const ButtonLogout = document.getElementById('ButtonLogout');
 const info = document.getElementById('info');
-const logininputs  = document.getElementById('logininputs');
-const inputuseremail  = document.getElementById('inputuseremail');
+const logininputs = document.getElementById('logininputs');
+const inputuseremail = document.getElementById('inputuseremail');
 const inputpassword = document.getElementById('inputpassword');
 const loginbtn = document.getElementById('loginbtn');
 const login = document.getElementById('login');
@@ -24,11 +24,11 @@ const delaccount = document.getElementById('delaccount');
 
 function createaccount() {
     if (accountinputs.style.display == "block") {
-        
+
         accountinputs.style.display = "none";
 
     } else accountinputs.style.display = "block";
-    if(logininputs.style.display == "block"){
+    if (logininputs.style.display == "block") {
         logininputs.style.display = "none";
     }
 }
@@ -40,7 +40,7 @@ function User(name, email, password) {
 
 
 function createUserAccount() {
-    
+
     if (name.value == "" || email.value == "" || password.value == "" || confirmpassword.value == "") {
         alert("Please Provide the Required Information")
     }
@@ -48,13 +48,13 @@ function createUserAccount() {
         alert("Passwords do not match!");
         return;
     }
-    
+
     newUser = new User(
         name.value,
         email.value,
         password.value
     );
-    
+
     console.log(newUser);
     alert("Account Has Been Successfully created")
     LoggedState = true;
@@ -68,36 +68,34 @@ function createUserAccount() {
     localStorage.setItem("user", JSON.stringify(newUser));
 }
 
-function togglelogin(){
-    if (logininputs.style.display === "block")
-    { 
+function togglelogin() {
+    if (logininputs.style.display === "block") {
         logininputs.style.display = "none";
-    } 
-    else 
-        { 
-            logininputs.style.display = "block";
-        }
-            
-        if(accountinputs.style.display == "block"){
-            accountinputs.style.display = "none"
-        }
+    }
+    else {
+        logininputs.style.display = "block";
+    }
+
+    if (accountinputs.style.display == "block") {
+        accountinputs.style.display = "none"
+    }
 }
 
-function handlelogin(){
-    if(!newUser){
+function handlelogin() {
+    if (!newUser) {
         alert("No User Found");
         return;
     }
     let emailinput = inputuseremail.value;
     let passwordinput = inputpassword.value;
-    if( (emailinput === newUser.email) && (passwordinput === newUser.password) ){
+    if ((emailinput === newUser.email) && (passwordinput === newUser.password)) {
         LoggedState = true;
         alert("Logged in Success");
         dashboard.style.display = "block";
         ButtonLoggin.style.display = "none";
         logininputs.style.display = "none";
-        
-    }else alert("Email or Password Incorrect");
+
+    } else alert("Email or Password Incorrect");
     LoggedState = localStorage.getItem("loggedIn") === "true";
 }
 
@@ -112,7 +110,7 @@ function showinfo() {
         <p><b>Name:</b> ${newUser.name}</p>
         <p><b>Email:</b> ${newUser.email}</p>
     `;
-    
+
 }
 
 ButtonLogout.addEventListener('click', function () {
@@ -123,9 +121,9 @@ ButtonLogout.addEventListener('click', function () {
 }
 )
 
-delaccount.addEventListener('click', function() {
+delaccount.addEventListener('click', function () {
     let conf = confirm("Are You Sure You Want To Delete Your Account?");
-    if(conf == true){
+    if (conf == true) {
         localStorage.clear();
         window.location.reload();
     } else {
