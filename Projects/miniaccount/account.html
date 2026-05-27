@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AccountSystem</title>
 </head>
+
 <body>
-     <!--
+    <!--
     Button style = "padding:5px; margin:5px; border-radius:1px;"
     Input Style = "padding:5px; margin:5px; border-radius:1px;"
     -->
 
     <h1>Account Conecpt</h1>
-    
-    <div id = "ButtonLoggin">
-        <button onclick="createaccount()" id ="createaccountbtn" style="padding:5px; margin:5px; border-radius:1px;">
-              Create an Account
+
+    <div id="ButtonLoggin">
+        <button onclick="createaccount()" id="createaccountbtn" style="padding:5px; margin:5px; border-radius:1px;">
+            Create an Account
         </button>
 
-        <button onclick="togglelogin()" id ="loginbtn" style="padding:5px; margin:5px; border-radius:1px;">
-              Login To Account
+        <button onclick="togglelogin()" id="loginbtn" style="padding:5px; margin:5px; border-radius:1px;">
+            Login To Account
         </button>
     </div>
 
@@ -32,9 +34,9 @@
         <p>
             Enter Your Current Password
         </p>
-        <input id="inputpassword" style = "padding:5px; margin:5px; border-radius:1px;">
+        <input id="inputpassword" style="padding:5px; margin:5px; border-radius:1px;">
 
-        <button id="login" onclick = "handlelogin() "style="padding:5px; margin:5px; border-radius:1px;">
+        <button id="login" onclick="handlelogin() " style="padding:5px; margin:5px; border-radius:1px;">
             Login
         </button>
 
@@ -47,40 +49,40 @@
         <p>
             Enter your Username
         </p>
-        <input id="Name" type="text" style = "padding:5px; margin:5px; border-radius:1px;"v>
+        <input id="Name" type="text" style="padding:5px; margin:5px; border-radius:1px;" v>
 
         <p>
             Enter Your Email
         </p>
-        <input type="text" id="email" style = "padding:5px; margin:5px; border-radius:1px;">
+        <input type="text" id="email" style="padding:5px; margin:5px; border-radius:1px;">
 
         <p>
             Enter Your Password
         </p>
-        <input id="password" type="password" style = "padding:5px; margin:5px; border-radius:1px;">
-    
+        <input id="password" type="password" style="padding:5px; margin:5px; border-radius:1px;">
+
         <p>
             Confirm Password
         </p>
-        <input id="confirmpassword" type = "password" style = "padding:5px; margin:5px; border-radius:1px;">
+        <input id="confirmpassword" type="password" style="padding:5px; margin:5px; border-radius:1px;">
 
-        <button id="Create" onclick="createUserAccount()" style = "padding:5px; margin:5px; border-radius:1px;">
+        <button id="Create" onclick="createUserAccount()" style="padding:5px; margin:5px; border-radius:1px;">
             Create Account
         </button>
 
     </div>
 
-    <div id="dashboard" style = "display: none;">
+    <div id="dashboard" style="display: none;">
 
-        <button id="userinfo" style = "padding:5px; margin:5px; border-radius:1px;" onclick="showinfo()">
+        <button id="userinfo" style="padding:5px; margin:5px; border-radius:1px;" onclick="showinfo()">
             Show User Info
         </button>
-        
-        <button id="ButtonLogout"style = "padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
+
+        <button id="ButtonLogout" style="padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
             Log Out
         </button>
 
-        <button id="delaccount"style = "padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
+        <button id="delaccount" style="padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
             Delete Account
         </button>
 
@@ -89,12 +91,13 @@
     <div id="info"></div>
 
 
-    
 
 
 
 
-    
-        <script src="account.js"></script>
+
+
+    <script src="account.js"></script>
 </body>
+
 </html>
