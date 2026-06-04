@@ -107,7 +107,7 @@ let userinfo = {
         province: "Punjab",
     }
 }
-console.log(userinfo.address?.Area); 
+// console.log(userinfo.address?.Area); 
 
 let myuser = {
     name: "Ahmad",
@@ -125,3 +125,13 @@ function logout(){
         myuser.isLoggedin = false;
     }else console.log("Already Logged out");
         }
+
+// SYMBols
+let id2 = Symbol("Hello");
+    // console.log(id2.toString());
+let hiduser = {
+    name:"Me",
+};
+let id = Symbol("id");
+hiduser[id] = 1;
+console.log(hiduser[id])
