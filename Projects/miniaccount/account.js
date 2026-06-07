@@ -19,6 +19,7 @@ const inputpassword = document.getElementById('inputpassword');
 const loginbtn = document.getElementById('loginbtn');
 const login = document.getElementById('login');
 const delaccount = document.getElementById('delaccount');
+const 
 
 
 
@@ -88,7 +89,7 @@ function handlelogin() {
     }
     let emailinput = inputuseremail.value;
     let passwordinput = inputpassword.value;
-    if ((emailinput === newUser.email) && (passwordinput === newUser.password)) {
+    if ((emailinput === newUser.email || emailinput === newUser.name) && (passwordinput === newUser.password)) {
         LoggedState = true;
         alert("Logged in Success");
         dashboard.style.display = "block";
@@ -130,3 +131,7 @@ delaccount.addEventListener('click', function () {
         return;
     }
 })
+
+function coins(){
+    
+}
