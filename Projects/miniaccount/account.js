@@ -31,7 +31,7 @@ function saveUser() {
 
 function createaccount() {
     if (accountinputs.style.display == "block") {
-        
+
         accountinputs.style.display = "none";
 
     } else accountinputs.style.display = "block";
@@ -74,7 +74,7 @@ function createUserAccount() {
         dashboard.style.display = "block";
     }
 
-    localStorage.setItem("user", JSON.stringify(newUser));
+    saveUser();
 }
 
 function togglelogin() {

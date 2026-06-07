@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AccountSystem</title>
 </head>
 
@@ -16,102 +16,77 @@
     <h1>Account Conecpt</h1>
 
     <div id="ButtonLoggin">
-        <button onclick="createaccount()" id="createaccountbtn" style="padding:5px; margin:5px; border-radius:1px;">
+        <button onclick="createaccount()" id="createaccountbtn" style="padding: 5px; margin: 5px; border-radius: 1px">
             Create an Account
         </button>
 
-        <button onclick="togglelogin()" id="loginbtn" style="padding:5px; margin:5px; border-radius:1px;">
+        <button onclick="togglelogin()" id="loginbtn" style="padding: 5px; margin: 5px; border-radius: 1px">
             Login To Account
         </button>
     </div>
 
-    <div id="logininputs" style="display: none;">
-        <p>
-            Enter your Email OR Username
-        </p>
-        <input type="text" id="inputuseremail" style="padding:5px; margin:5px; border-radius:1px;">
+    <div id="logininputs" style="display: none">
+        <p>Enter your Email OR Username</p>
+        <input type="text" id="inputuseremail" style="padding: 5px; margin: 5px; border-radius: 1px" />
 
-        <p>
-            Enter Your Current Password
-        </p>
-        <input id="inputpassword" style="padding:5px; margin:5px; border-radius:1px;">
+        <p>Enter Your Current Password</p>
+        <input id="inputpassword" style="padding: 5px; margin: 5px; border-radius: 1px" />
 
-        <button id="login" onclick="handlelogin() " style="padding:5px; margin:5px; border-radius:1px;">
+        <button id="login" onclick="handlelogin()" style="padding: 5px; margin: 5px; border-radius: 1px">
             Login
         </button>
-
-
     </div>
 
+    <div id="AccountInputs" style="display: none">
+        <p>Enter your Username</p>
+        <input id="Name" type="text" style="padding: 5px; margin: 5px; border-radius: 1px" v />
 
-    <div id="AccountInputs" style="display: none;">
+        <p>Enter Your Email</p>
+        <input type="text" id="email" style="padding: 5px; margin: 5px; border-radius: 1px" />
 
-        <p>
-            Enter your Username
-        </p>
-        <input id="Name" type="text" style="padding:5px; margin:5px; border-radius:1px;" v>
+        <p>Enter Your Password</p>
+        <input id="password" type="password" style="padding: 5px; margin: 5px; border-radius: 1px" />
 
-        <p>
-            Enter Your Email
-        </p>
-        <input type="text" id="email" style="padding:5px; margin:5px; border-radius:1px;">
+        <p>Confirm Password</p>
+        <input id="confirmpassword" type="password" style="padding: 5px; margin: 5px; border-radius: 1px" />
 
-        <p>
-            Enter Your Password
-        </p>
-        <input id="password" type="password" style="padding:5px; margin:5px; border-radius:1px;">
-
-        <p>
-            Confirm Password
-        </p>
-        <input id="confirmpassword" type="password" style="padding:5px; margin:5px; border-radius:1px;">
-
-        <button id="Create" onclick="createUserAccount()" style="padding:5px; margin:5px; border-radius:1px;">
+        <button id="Create" onclick="createUserAccount()" style="padding: 5px; margin: 5px; border-radius: 1px">
             Create Account
         </button>
-
     </div>
 
-    <div id="dashboard" style="display: none;">
-
-        <button id="userinfo" style="padding:5px; margin:5px; border-radius:1px;" onclick="showinfo()">
+    <div id="dashboard" style="display: none">
+        <button id="userinfo" style="padding: 5px; margin: 5px; border-radius: 1px" onclick="showinfo()">
             Show User Info
         </button>
 
-        <button id="ButtonLogout" style="padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
+        <button id="ButtonLogout" style="padding: 5px; margin: 5px; border-radius: 1px" onclick="logout()">
             Log Out
         </button>
 
-        <button id="delaccount" style="padding:5px; margin:5px; border-radius:1px;" onclick="delaccount()">
+        <button id="delaccount" style="padding: 5px; margin: 5px; border-radius: 1px" onclick="delaccount()">
             Delete Account
         </button>
-        <hr>
+        <hr />
         <div id="coins">
-            <button style="padding:5px; margin:5px; border-radius:1px;" id="gotocoin"> Do You want to earn more coins? </button> 
+            <button style="padding: 5px; margin: 5px; border-radius: 1px" id="gotocoin">
+                Do You want to earn more coins?
+            </button>
 
-            <div id="options" style="display: none;">
-                <button id = "add5" style="padding:5px; margin:5px; border-radius:1px;">
+            <div id="options" style="display: none">
+                <button id="add5" style="padding: 5px; margin: 5px; border-radius: 1px">
                     +5
                 </button>
-                <button id="add10" style="padding:5px; margin:5px; border-radius:1px;">
-                   +10
+                <button id="add10" style="padding: 5px; margin: 5px; border-radius: 1px">
+                    +10
                 </button>
-                <button id="add100" style="padding:5px; margin:5px; border-radius:1px;">
-                   +100
+                <button id="add100" style="padding: 5px; margin: 5px; border-radius: 1px">
+                    +100
                 </button>
             </div>
-
         </div>
-
     </div>
     <div id="info"></div>
-
-
-
-
-
-
-
 
     <script src="account.js"></script>
 </body>
