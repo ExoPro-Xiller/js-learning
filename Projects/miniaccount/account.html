@@ -78,16 +78,28 @@
             Show User Info
         </button>
 
-        <button id="ButtonLogout" style="padding:5px; margin:5px; border-radius:1px;" onclick="delaccount()">
+        <button id="ButtonLogout" style="padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
             Log Out
         </button>
 
-        <button id="delaccount" style="padding:5px; margin:5px; border-radius:1px;" onclick="logout()">
+        <button id="delaccount" style="padding:5px; margin:5px; border-radius:1px;" onclick="delaccount()">
             Delete Account
         </button>
         <hr>
         <div id="coins">
-            <button style="padding:5px; margin:5px; border-radius:1px;" id="coinshop" onclick="window.location.href = 'coinadd.html'"> Do You want to earn more coins? </button> 
+            <button style="padding:5px; margin:5px; border-radius:1px;" id="gotocoin"> Do You want to earn more coins? </button> 
+
+            <div id="options" style="display: none;">
+                <button id = "add5" style="padding:5px; margin:5px; border-radius:1px;">
+                    +5
+                </button>
+                <button id="add10" style="padding:5px; margin:5px; border-radius:1px;">
+                   +10
+                </button>
+                <button id="add100" style="padding:5px; margin:5px; border-radius:1px;">
+                   +100
+                </button>
+            </div>
 
         </div>
 

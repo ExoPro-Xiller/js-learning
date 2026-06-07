@@ -19,13 +19,19 @@ const inputpassword = document.getElementById('inputpassword');
 const loginbtn = document.getElementById('loginbtn');
 const login = document.getElementById('login');
 const delaccount = document.getElementById('delaccount');
-const 
+const gotocoin = document.getElementById('gotocoin');
+const options = document.getElementById('options');
+const add10 = document.getElementById('add10');
+const add5 = document.getElementById('add5');
+const add100 = document.getElementById('add100');
 
-
+function saveUser() {
+    localStorage.setItem("user", JSON.stringify(newUser));
+}
 
 function createaccount() {
     if (accountinputs.style.display == "block") {
-
+        
         accountinputs.style.display = "none";
 
     } else accountinputs.style.display = "block";
@@ -33,10 +39,12 @@ function createaccount() {
         logininputs.style.display = "none";
     }
 }
+
 function User(name, email, password) {
     this.name = name;
     this.email = email;
     this.password = password;
+    this.coins = 0;
 }
 
 
@@ -102,6 +110,10 @@ function handlelogin() {
 
 
 function showinfo() {
+    if (info.style.display == "block") {
+        info.style.display = "none"
+    } else info.style.display = "block";
+
     if (!newUser) {
         alert("No user created yet!");
         return;
@@ -110,6 +122,7 @@ function showinfo() {
     info.innerHTML = `
         <p><b>Name:</b> ${newUser.name}</p>
         <p><b>Email:</b> ${newUser.email}</p>
+        <p>Coin Balance: ${newUser.coins}</p>
     `;
 
 }
@@ -131,7 +144,51 @@ delaccount.addEventListener('click', function () {
         return;
     }
 })
+// COIN SYSTEM:
 
-function coins(){
-    
-}
+gotocoin.addEventListener('click', function () {
+
+    if (confirm("Do you want to Earn COINS")) {
+        options.style.display = "block";
+    } else {
+        options.style.display = "none";
+        return;
+    }
+})
+
+add5.addEventListener('click', function () {
+    if (newUser.coins == 400) {
+        alert("Coin Limit reached, Cannot add more balance");
+        console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins += 5;
+        saveUser();
+        console.log(`Added 10 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
+add10.addEventListener('click', function () {
+    if (newUser.coins == 400) {
+        alert("Coin Aquirement limit Reached!");
+        console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins += 10;
+        saveUser();
+        console.log(`Added 10 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
+add100.addEventListener('click', function () {
+    if (newUser.coins == 400) {
+        alert("Coin Aquirement limit Reached!");
+        console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins += 100;
+        saveUser();
+        console.log(`Added 100 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
