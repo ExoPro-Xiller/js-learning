@@ -134,4 +134,4 @@ let hiduser = {
 };
 let id = Symbol("id");
 hiduser[id] = 1;
-console.log(hiduser[id])
+// console.log(hiduser[id]);
