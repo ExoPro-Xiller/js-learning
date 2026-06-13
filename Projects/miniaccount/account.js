@@ -1,5 +1,5 @@
 // Creating an account system
-let LoggedState = false;
+let LoggedState;
 let newUser;
 newUser = JSON.parse(localStorage.getItem("user"));
 const createaccountbtn = document.getElementById('createaccountbtn');
@@ -25,6 +25,14 @@ const add10 = document.getElementById('add10');
 const add5 = document.getElementById('add5');
 const add100 = document.getElementById('add100');
 
+window.addEventListener('DOMContentLoaded', function(){
+    const Logged = localStorage.getItem("loggedIn");
+    if(Logged == "true"){
+        ButtonLoggin.style.display = "none";
+        dashboard.style.display = "block";
+
+    }else console.log("No Logged User found");
+})
 function saveUser() {
     localStorage.setItem("user", JSON.stringify(newUser));
 }
@@ -57,15 +65,16 @@ function createUserAccount() {
         alert("Passwords do not match!");
         return;
     }
-
+    
     newUser = new User(
         name.value,
         email.value,
         password.value
     );
-
+    
     console.log(newUser);
     alert("Account Has Been Successfully created")
+    localStorage.setItem("loggedIn", "true");
     LoggedState = true;
     ButtonLoggin.style.display = "none";
     accountinputs.style.display = "none";
@@ -99,13 +108,14 @@ function handlelogin() {
     let passwordinput = inputpassword.value;
     if ((emailinput === newUser.email || emailinput === newUser.name) && (passwordinput === newUser.password)) {
         LoggedState = true;
+        LoggedState = localStorage.getItem("loggedIn") === "true";
         alert("Logged in Success");
         dashboard.style.display = "block";
         ButtonLoggin.style.display = "none";
         logininputs.style.display = "none";
 
     } else alert("Email or Password Incorrect");
-    LoggedState = localStorage.getItem("loggedIn") === "true";
+    localStorage.setItem("loggedIn", "true");
 }
 
 
@@ -130,6 +140,7 @@ function showinfo() {
 ButtonLogout.addEventListener('click', function () {
     if (confirm("Are Your Sure You Want To Log Out?")) {
         LoggedState = false;
+        localStorage.removeItem("loggedIn");
     } else return;
     window.location.reload();
 }
