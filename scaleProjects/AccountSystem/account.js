@@ -2,28 +2,35 @@
 let LoggedState;
 let newUser;
 newUser = JSON.parse(localStorage.getItem("user"));
+
 const createaccountbtn = document.getElementById('createaccountbtn');
 const accountinputs = document.getElementById('AccountInputs');
 const name = document.getElementById('Name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmpassword = document.getElementById('confirmpassword');
-const userinfo = document.getElementById('userinfo');
-const dashboard = document.getElementById('dashboard');
+
 const ButtonLoggin = document.getElementById('ButtonLoggin');
-const ButtonLogout = document.getElementById('ButtonLogout');
-const info = document.getElementById('info');
 const logininputs = document.getElementById('logininputs');
 const inputuseremail = document.getElementById('inputuseremail');
 const inputpassword = document.getElementById('inputpassword');
 const loginbtn = document.getElementById('loginbtn');
 const login = document.getElementById('login');
+
+const userinfo = document.getElementById('userinfo');
+const dashboard = document.getElementById('dashboard');
+const ButtonLogout = document.getElementById('ButtonLogout');
+const info = document.getElementById('info');
 const delaccount = document.getElementById('delaccount');
+
 const gotocoin = document.getElementById('gotocoin');
 const options = document.getElementById('options');
-const add10 = document.getElementById('add10');
 const add5 = document.getElementById('add5');
+const add10 = document.getElementById('add10');
 const add100 = document.getElementById('add100');
+const sub5 = document.getElementById('sub5');
+const sub10 = document.getElementById('sub10');
+const sub100 = document.getElementById('sub100');
 
 window.addEventListener('DOMContentLoaded', function(){
     const Logged = localStorage.getItem("loggedIn");
@@ -200,6 +207,46 @@ add100.addEventListener('click', function () {
         newUser.coins += 100;
         saveUser();
         console.log(`Added 100 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
+
+sub5.addEventListener('click', function () {
+    if (newUser.coins <= 0) {
+        alert("Coin Balance Reached 0!");
+        newUser.coins = 0;
+        console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins -= 5;
+        saveUser();
+        console.log(`Subtracted 5 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
+sub10.addEventListener('click', function () {
+    if (newUser.coins <= 10) {
+        alert("Coin Balance Reached 0!");
+        newUser.coins = 0;
+        console.log(`Coins Reached 0, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins -= 10;
+        saveUser();
+        console.log(`Subtracted 10 coins to the balance, Current Balance: ${newUser.coins}`);
+        return;
+    }
+})
+sub100.addEventListener('click', function () {
+    if (newUser.coins <= 0) {
+        alert("Coin Balance Reached 0!");
+        newUser.coins = 0;
+        console.log(`Coins Reached 0, Current Balance: ${newUser.coins}`);
+        return;
+    } else {
+        newUser.coins -= 100;
+        saveUser();
+        console.log(`Subtracted 100 coins to the balance, Current Balance: ${newUser.coins}`);
         return;
     }
 })
