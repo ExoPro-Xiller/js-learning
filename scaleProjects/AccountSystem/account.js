@@ -31,7 +31,7 @@ const add100 = document.getElementById('add100');
 const sub5 = document.getElementById('sub5');
 const sub10 = document.getElementById('sub10');
 const sub100 = document.getElementById('sub100');
-
+// FUNCTION FOR LATER USE
 window.addEventListener('DOMContentLoaded', function(){
     const Logged = localStorage.getItem("loggedIn");
     if(Logged == "true"){
@@ -44,6 +44,13 @@ function saveUser() {
     localStorage.setItem("user", JSON.stringify(newUser));
 }
 
+// Account System
+function User(name, email, password) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.coins = 0;
+}
 function createaccount() {
     if (accountinputs.style.display == "block") {
 
@@ -54,14 +61,6 @@ function createaccount() {
         logininputs.style.display = "none";
     }
 }
-
-function User(name, email, password) {
-    this.name = name;
-    this.email = email;
-    this.password = password;
-    this.coins = 0;
-}
-
 
 function createUserAccount() {
 
@@ -93,6 +92,7 @@ function createUserAccount() {
     saveUser();
 }
 
+
 function togglelogin() {
     if (logininputs.style.display === "block") {
         logininputs.style.display = "none";
@@ -115,16 +115,18 @@ function handlelogin() {
     let passwordinput = inputpassword.value;
     if ((emailinput === newUser.email || emailinput === newUser.name) && (passwordinput === newUser.password)) {
         LoggedState = true;
-        LoggedState = localStorage.getItem("loggedIn") === "true";
+        localStorage.setItem("loggedIn", "true");
+        LoggedState = localStorage.getItem("loggedIn");
         alert("Logged in Success");
         dashboard.style.display = "block";
         ButtonLoggin.style.display = "none";
         logininputs.style.display = "none";
 
     } else alert("Email or Password Incorrect");
-    localStorage.setItem("loggedIn", "true");
 }
 
+
+// DashBoard
 
 function showinfo() {
     if (info.style.display == "block") {
@@ -175,19 +177,19 @@ gotocoin.addEventListener('click', function () {
 })
 
 add5.addEventListener('click', function () {
-    if (newUser.coins == 400) {
+    if (newUser.coins == 400 || newUser.coins + 5 > 400) {
         alert("Coin Limit reached, Cannot add more balance");
         console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
         return;
     } else {
         newUser.coins += 5;
         saveUser();
-        console.log(`Added 10 coins to the balance, Current Balance: ${newUser.coins}`);
+        console.log(`Added 5 coins to the balance, Current Balance: ${newUser.coins}`);
         return;
     }
 })
 add10.addEventListener('click', function () {
-    if (newUser.coins == 400) {
+    if (newUser.coins == 400 || newUser.coins + 10 > 400) {
         alert("Coin Aquirement limit Reached!");
         console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
         return;
@@ -199,7 +201,7 @@ add10.addEventListener('click', function () {
     }
 })
 add100.addEventListener('click', function () {
-    if (newUser.coins == 400) {
+    if (newUser.coins == 400 || newUser.coins + 100 > 400) {
         alert("Coin Aquirement limit Reached!");
         console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
         return;
@@ -212,10 +214,9 @@ add100.addEventListener('click', function () {
 })
 
 sub5.addEventListener('click', function () {
-    if (newUser.coins <= 0) {
-        alert("Coin Balance Reached 0!");
-        newUser.coins = 0;
-        console.log(`Limit Reached, Current Balance: ${newUser.coins}`);
+    if (newUser.coins < 5) {
+        alert("Not Enough Coins to Spend!");
+        console.log(`Not Enough Coins to Spend, Current Balance: ${newUser.coins}`);
         return;
     } else {
         newUser.coins -= 5;
@@ -225,10 +226,9 @@ sub5.addEventListener('click', function () {
     }
 })
 sub10.addEventListener('click', function () {
-    if (newUser.coins <= 10) {
-        alert("Coin Balance Reached 0!");
-        newUser.coins = 0;
-        console.log(`Coins Reached 0, Current Balance: ${newUser.coins}`);
+    if (newUser.coins < 10) {
+        alert("Not Enough Coins to Spend!");
+        console.log(`Not Enough Coins to Spend, Current Balance: ${newUser.coins}`);
         return;
     } else {
         newUser.coins -= 10;
@@ -238,10 +238,9 @@ sub10.addEventListener('click', function () {
     }
 })
 sub100.addEventListener('click', function () {
-    if (newUser.coins <= 0) {
-        alert("Coin Balance Reached 0!");
-        newUser.coins = 0;
-        console.log(`Coins Reached 0, Current Balance: ${newUser.coins}`);
+    if (newUser.coins < 100) {
+        alert("Not Enough Coins to Spend!");
+        console.log(`Not Enough Coins to Spend, Current Balance: ${newUser.coins}`);
         return;
     } else {
         newUser.coins -= 100;
