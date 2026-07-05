@@ -65,7 +65,8 @@ function createaccount() {
 function createUserAccount() {
 
     if (name.value == "" || email.value == "" || password.value == "" || confirmpassword.value == "") {
-        alert("Please Provide the Required Information")
+        alert("Please Provide the Required Information");
+        return;
     }
     else if (password.value !== confirmpassword.value) {
         alert("Passwords do not match!");
