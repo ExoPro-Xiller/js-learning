@@ -1,10 +1,14 @@
-let logstate;
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
 function saveUsers() {
     localStorage.setItem("users", JSON.stringify(users));
 }
-
+function clearstorage(){
+    localStorage.clear();
+    users = [];
+    console.log(localStorage);
+    localStorage.setItem("loggedIn", "false");
+}
 const account = document.getElementById('account');
 const createaccbtn = document.getElementById('createaccbtn');
 const createdashboard = document.getElementById('createdashboard');
@@ -14,11 +18,26 @@ const passwordinput = document.getElementById('passwordinput');
 const confpassword = document.getElementById('confpassword');
 const loginbtn = document.getElementById('loginbtn');
 const logindashboard = document.getElementById('logindashboard');
+const emailuserlogin = document.getElementById('emailuserlogin');
+const passwordlogin = document.getElementById('passwordlogin');
 // TOGGLE UI
 function createaccounttoggle() {
     if (createdashboard.style.display == "none") {
         createdashboard.style.display = "block";
     } else createdashboard.style.display = "none";
+
+    if (logindashboard.style.display == "block") {
+        logindashboard.style.display = "none";
+    }
+}
+function logintoggle() {
+    if (logindashboard.style.display == "none") {
+        logindashboard.style.display = "block";
+    } else logindashboard.style.display = "none";
+
+    if (createdashboard.style.display == "block") {
+        createdashboard.style.display = "none";
+    }
 }
 
 
@@ -30,32 +49,59 @@ function User(userinput, emailinput, passwordinput) {
     this.Password = passwordinput;
 }
 
+// Authentication
 function createaccount() {
 
-    for(const user of users){
-        if(user.Email === emailinput.value || user.Name === userinput.value){
+    for (const user of users) {
+        if (user.Email === emailinput.value || user.Name === userinput.value) {
             alert("Account Already Exists");
             return;
         }
-    }    
+    }
     if (emailinput.value === "" || userinput.value === "" || passwordinput.value === "" || confpassword.value === "") {
-            alert("Enter Complete Details");
-            return;
-        } else if (passwordinput.value != confpassword.value) {
-            alert("Passwords do NOT match");
-            return;
-        }
-    
+        alert("Enter Complete Details");
+        return;
+    } else if (passwordinput.value != confpassword.value) {
+        alert("Passwords do NOT match");
+        return;
+    }
 
-        const newUser = new User(
-            userinput.value,
-            emailinput.value,
-            passwordinput.value,
-        )
-        users.push(newUser);
-        saveUsers();
-        console.log(users);
+
+    const newUser = new User(
+        userinput.value,
+        emailinput.value,
+        passwordinput.value,
+    )
+    users.push(newUser);
+    saveUsers();
+    console.log(users);
+    alert("Account has been succeccfully created!");
+    window.location.reload();
 }
 
 
-// Authentication
+
+function loginaccount() {
+
+    if (!users) {
+        return;
+    }
+    if (emailuserlogin.value == "" || passwordlogin.value == "") {
+        alert("Please Provide the Required Information");
+        return;
+    }
+    for (const user of users) {
+        if (user.Email === emailuserlogin.value && user.Password === passwordlogin.value) {
+            alert("Logged in Successful");
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("currentUser", user.Email);
+            logstate = true;
+            window.location.reload();
+        }
+        
+    }
+}
+
+window.addEventListener('DOMContentLoaded', function(){
+    console.log(users);
+})
