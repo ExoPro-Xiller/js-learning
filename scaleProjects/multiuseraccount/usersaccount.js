@@ -20,6 +20,11 @@ const loginbtn = document.getElementById('loginbtn');
 const logindashboard = document.getElementById('logindashboard');
 const emailuserlogin = document.getElementById('emailuserlogin');
 const passwordlogin = document.getElementById('passwordlogin');
+const dashboard = document.getElementById('dashboard');
+const showinfo = document.getElementById('showinfo');
+const info = document.getElementById('info');
+const logout = document.getElementById('logout');
+
 // TOGGLE UI
 function createaccounttoggle() {
     if (createdashboard.style.display == "none") {
@@ -91,16 +96,53 @@ function loginaccount() {
         return;
     }
     for (const user of users) {
-        if (user.Email === emailuserlogin.value && user.Password === passwordlogin.value) {
+        if ((user.Email === emailuserlogin.value || user.Name === emailuserlogin.value )&& user.Password === passwordlogin.value) {
             alert("Logged in Successful");
             localStorage.setItem("loggedIn", "true");
-            localStorage.setItem("currentUser", user.Email);
-            logstate = true;
+            localStorage.setItem("currentUserEmail", user.Email);
             window.location.reload();
         }
         
     }
 }
+let currentuser;
+for(const user of users){
+    if(user.Email === (localStorage.getItem("currentUserEmail"))){
+        currentuser = user;
+        break;
+    }
+}
+function log_out(){
+    localStorage.setItem("loggedIn", "false");
+    localStorage.removeItem("currentUserEmail");
+
+    window.location.reload();
+}
+window.onload = function(){
+    const state = localStorage.getItem("loggedIn");
+    if(state === "true"){
+        account.style.display = "none";
+        dashboard.style.display = "block";
+    
+    }
+}
+
+
+
+showinfo.addEventListener('click', function(){
+    
+    if(info.style.display == "none"){
+        info.style.display = "block";
+    }else info.style.display = "none";
+    if(!currentuser) {
+        alert("no user available");
+        return;
+    }
+    info.innerHTML = `<p><b>Name :</b>${currentuser.Name}
+                      <p><b>Email :</b>${currentuser.Email}</p>`
+                      
+
+})
 
 window.addEventListener('DOMContentLoaded', function(){
     console.log(users);
