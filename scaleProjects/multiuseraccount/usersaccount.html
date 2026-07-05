@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+<body>
+     <!--
+    Button style = "padding:5px; margin:5px; border-radius:1px;"
+    Input Style = "padding:5px; margin:5px; border-radius:1px;"
+    -->
+
+    <h1>A Multi-user Account  <font color = "Teal"><U>Concept</U></font></h1>
+    <!-- Creating An account -->
+        <div id="account" >
+            <button id="createaccbtn" style = "padding:5px; margin:5px; border-radius:1px;" onclick="createaccounttoggle()">Create your account</button>
+            <button id="loginbtn" style = "padding:5px; margin:5px; border-radius:1px;">Log into Your Account</button>
+            <div id="createdashboard" style="display:none">
+
+                <p>Enter Your Name</p>
+                <input id="userinput" style = "padding:5px; margin:5px; border-radius:1px;">
+
+                <p>Enter Your Email</p>
+                <input id="emailinput" style = "padding:5px; margin:5px; border-radius:1px;">
+
+                <p>Enter Your Password</p>
+                <input id="passwordinput" style = "padding:5px; margin:5px; border-radius:1px;">
+
+                <p>Confirm Password</p>
+                <input id="confpassword" style = "padding:5px; margin:5px; border-radius:1px;">
+
+                <button id="create_process" style = "padding:5px; margin:5px; border-radius:1px;" onclick="createaccount()">Create Account</button>
+            </div>
+
+            <div id ="logindashboard" style="display: none;">
+
+            </div>
+        </div>
+    
+        <script src="usersaccount.js"></script>
+</body>
+</html>
