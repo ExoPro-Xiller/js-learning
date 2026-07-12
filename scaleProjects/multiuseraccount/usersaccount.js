@@ -1,4 +1,11 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
+let currentuser;
+for(const user of users){
+    if(user.Email === (localStorage.getItem("currentUserEmail"))){
+        currentuser = user;
+        break;
+    }
+}
 
 function saveUsers() {
     localStorage.setItem("users", JSON.stringify(users));
@@ -57,18 +64,18 @@ function User(userinput, emailinput, passwordinput) {
 // Authentication
 function createaccount() {
 
-    for (const user of users) {
-        if (user.Email === emailinput.value || user.Name === userinput.value) {
-            alert("Account Already Exists");
-            return;
-        }
-    }
     if (emailinput.value === "" || userinput.value === "" || passwordinput.value === "" || confpassword.value === "") {
         alert("Enter Complete Details");
         return;
     } else if (passwordinput.value != confpassword.value) {
         alert("Passwords do NOT match");
         return;
+    }
+    for (const user of users) {
+        if (user.Email === emailinput.value || user.Name === userinput.value) {
+            alert("Account Already Exists");
+            return;
+        }
     }
 
 
@@ -81,6 +88,10 @@ function createaccount() {
     saveUsers();
     console.log(users);
     alert("Account has been succeccfully created!");
+    localStorage.setItem("loggedIn", "true");
+    for(const user of users){
+        localStorage.setItem("currentUserEmail", user.Email);
+    }
     window.location.reload();
 }
 
@@ -105,13 +116,6 @@ function loginaccount() {
         
     }
 }
-let currentuser;
-for(const user of users){
-    if(user.Email === (localStorage.getItem("currentUserEmail"))){
-        currentuser = user;
-        break;
-    }
-}
 function log_out(){
     localStorage.setItem("loggedIn", "false");
     localStorage.removeItem("currentUserEmail");
@@ -131,13 +135,13 @@ window.onload = function(){
 
 showinfo.addEventListener('click', function(){
     
-    if(info.style.display == "none"){
-        info.style.display = "block";
-    }else info.style.display = "none";
     if(!currentuser) {
         alert("no user available");
         return;
     }
+    if(info.style.display == "none"){
+        info.style.display = "block";
+    }else info.style.display = "none";
     info.innerHTML = `<p><b>Name :</b>${currentuser.Name}
                       <p><b>Email :</b>${currentuser.Email}</p>`
                       

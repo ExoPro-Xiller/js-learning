@@ -1,0 +1,20 @@
+.para{
+    font-size: 19px;
+    margin-left:20px ;
+}
+
+button, input{
+
+    padding: 5px;
+    margin: 10px;
+    border-radius:1px;
+    
+}
+button{
+    width:176px;
+}
+
+
+#create_process, #login{
+    display:block;
+}
