@@ -11,10 +11,13 @@ function saveUsers() {
     localStorage.setItem("users", JSON.stringify(users));
 }
 function clearstorage(){
+    if(confirm("Do You Want to Clear All User Data and Storage?")){
     localStorage.clear();
     users = [];
     console.log(localStorage);
     localStorage.setItem("loggedIn", "false");
+    }else return;
+
 }
 const account = document.getElementById('account');
 const createaccbtn = document.getElementById('createaccbtn');
@@ -117,10 +120,12 @@ function loginaccount() {
     }
 }
 function log_out(){
+    if(confirm("Are You Sure you want to Log Out ?")){
     localStorage.setItem("loggedIn", "false");
     localStorage.removeItem("currentUserEmail");
 
     window.location.reload();
+    }else return;
 }
 window.onload = function(){
     const state = localStorage.getItem("loggedIn");
@@ -142,8 +147,10 @@ showinfo.addEventListener('click', function(){
     if(info.style.display == "none"){
         info.style.display = "block";
     }else info.style.display = "none";
-    info.innerHTML = `<p><b>Name :</b>${currentuser.Name}
-                      <p><b>Email :</b>${currentuser.Email}</p>`
+    info.innerHTML = `<div id = "infotext">
+                                <p><b>Name :</b>${currentuser.Name}
+                                <p><b>Email :</b>${currentuser.Email}</p>
+                        </div>`
                       
 
 })

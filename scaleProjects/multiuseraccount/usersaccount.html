@@ -34,10 +34,10 @@
                 <input id="emailinput" type = "text" style = "padding:5px; border-radius:1px;">
                 
                 <p class="para">Enter Your Password</p>
-                <input id="passwordinput" style = "padding:5px;border-radius:1px;">
+                <input id="passwordinput" type="password" style = "padding:5px;border-radius:1px;">
                 
                 <p class="para">Confirm Password</p>
-                <input id="confpassword" style = "padding:5px; border-radius:1px;">
+                <input id="confpassword" type="password" style = "padding:5px; border-radius:1px;">
                 
                 <button id="create_process" style = "padding:5px;  border-radius:1px;" onclick="createaccount()">Create Account</button>
             </div>
@@ -48,7 +48,7 @@
                 <input id="emailuserlogin" type ="text" style = "padding:5px; border-radius:1px;">
     
                 <p>Enter Your Password</p>
-                <input id="passwordlogin" style = "padding:5px; border-radius:1px;">
+                <input id="passwordlogin" type="password" style = "padding:5px; border-radius:1px;">
                 <button id="login" onclick="loginaccount()" style = "padding:5px; border-radius:1px;">Login</button>
                 
                 </div>
@@ -58,9 +58,11 @@
 
         </div>
         <div id="dashboard" style="display:none;">
-            <button id="showinfo" style = "padding:5px; margin:5px; border-radius:1px;" > Show User Information</button>
-            <div id="info" style="display: none;"></div>
+            <div id="dashboardbtn">
+            <button id="showinfo" style = "padding:5px; margin:5px; border-radius:1px;" >User Information</button>
             <button id="logout" style = "padding:5px; margin:5px; border-radius:1px;" onclick="log_out()">Log Out</button>
+            </div>
+            <div id="info" style="display: none;"></div>
         </div>
     
         <script src="usersaccount.js"></script>
