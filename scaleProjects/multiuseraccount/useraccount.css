@@ -82,7 +82,8 @@ div#createdashboard p{
 div#createdashboard{
     display: flex;
     border: 2px solid rgb(0, 0, 0);
-    width: 350px;
+    width: 400px;
+    height: 450px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 2px;
@@ -97,7 +98,8 @@ div#createdashboard{
 div#logindashboard{
     display: flex;
     border: 2px solid rgb(0, 0, 0);
-    width: 350px;
+    width: 400px;
+    height: 450px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 2px;
