@@ -102,10 +102,9 @@ div#createdashboard{
 div#logindashboard{
     display: flex;
     border: 2px solid rgb(0, 0, 0);
-    width: 400px;
-    height: 450px;
+    width: 450px;
+    height: 400px;
     margin: 20px auto;
-    padding: 20px;
     border-radius: 2px;
     p{
         color: rgb(0, 0, 0);
@@ -158,3 +157,6 @@ div#logindashboard p{
     font-size: 18px;
 }
 
+#logindashboard{
+    padding-top: 90px;
+}
