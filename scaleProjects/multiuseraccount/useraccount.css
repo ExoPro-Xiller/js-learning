@@ -1,20 +1,64 @@
-.para{
-    font-size: 19px;
-    margin-left:20px ;
+@font-face {
+      font-family: 'Minecraft';
+      src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
 }
 
-button, input{
-
-    padding: 5px;
-    margin: 10px;
-    border-radius:1px;
-    
+p,h1,button{
+    text-align: center;
 }
+
+h1{
+    font-size: 45px;
+    font-weight: 500;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 2px;
+    display: block;
+    margin: 10px auto;
+}
+
+input:hover{
+    border: 3px solid rgb(76, 162, 76);
+    background-color: #c4d4d4;
+}
+
+button:hover{
+    border: 3px solid rgb(76, 162, 76);
+    background-color: #c4d4d4;
+
+}
+
+button,h1,p{
+    text-decoration: underline;
+    font-family: "Minecraft";
+
+}
+
 button{
-    width:176px;
+    text-decoration: none;
 }
 
+#login,#create_process{
+    display: block;
+    width: 180px;
+    margin: 10px auto;
+}
 
-#create_process, #login{
-    display:block;
+div#createdashboard p{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#accbtns{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px auto; margin-top: 10px ;
+    margin-bottom: 10px;
 }

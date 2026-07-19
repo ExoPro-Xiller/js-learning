@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="useraccount.css">
     <title>Account</title>
 </head>
-<body>
+<body bgcolor = lightgrey>
      <!--
     Button style = "padding:5px; margin:5px; border-radius:1px;"
     Input Style = "padding:5px; margin:5px; border-radius:1px;"
@@ -15,38 +15,47 @@
     <h1>A Multi-user Account  <font color = "Teal"><U>Concept</U></font></h1>
     <!-- Creating An account -->
         <div id="account" >
-            <button id="createaccbtn" style = "padding:5px; margin:5px; border-radius:1px;" onclick="createaccounttoggle()">Create your account</button>
 
-            <button id="loginbtn" style = "padding:5px; margin:5px; border-radius:1px;" onclick="logintoggle()">Log into Your Account</button>
+            <div id="accbtns">
+                <button id="createaccbtn" style = "padding:5px;  border-radius:1px;" onclick="createaccounttoggle()">Create your account</button>
 
-            <button style = "padding:5px; margin:5px; border-radius:1px;" onclick="clearstorage()">Clear LocalStorage</button>
+                <button id="loginbtn" style = "padding:5px;  border-radius:1px;" onclick="logintoggle()">Log into Your Account</button>
+
+                <button id="clearstorage" style = "padding:5px; border-radius:1px;" onclick="clearstorage()">Clear LocalStorage</button>
+
+            </div>
 
             <div id="createdashboard" style="display:none">
 
                 <p class="para">Enter Your Name</p>
-                <input id="userinput" type="text" style = "padding:5px; margin:5px; border-radius:1px;">
+                <input id="userinput" type="text" style = "padding:5px; border-radius:1px;">
 
                 <p class="para">Enter Your Email</p>
-                <input id="emailinput" type = "text" style = "padding:5px; margin:5px; border-radius:1px;">
+                <input id="emailinput" type = "text" style = "padding:5px; border-radius:1px;">
                 
                 <p class="para">Enter Your Password</p>
-                <input id="passwordinput" style = "padding:5px; margin:5px; border-radius:1px;">
+                <input id="passwordinput" style = "padding:5px;border-radius:1px;">
                 
                 <p class="para">Confirm Password</p>
-                <input id="confpassword" style = "padding:5px; margin:5px; border-radius:1px;">
+                <input id="confpassword" style = "padding:5px; border-radius:1px;">
                 
-                <button id="create_process" style = "padding:5px; margin:5px; border-radius:1px;" onclick="createaccount()">Create Account</button>
+                <button id="create_process" style = "padding:5px;  border-radius:1px;" onclick="createaccount()">Create Account</button>
             </div>
-            
-            <div id ="logindashboard" style="display: none;">
-                <p>Enter Your Name OR Email</p>
-                <input id="emailuserlogin" type ="text" style = "padding:5px; margin:5px; border-radius:1px;">
+
+            <div id="border">
+                <div id ="logindashboard" style="display: none;">
+                    <p>Enter Your Name OR Email</p>
+                <input id="emailuserlogin" type ="text" style = "padding:5px; border-radius:1px;">
     
                 <p>Enter Your Password</p>
-                <input id="passwordlogin" style = "padding:5px; margin:5px; border-radius:1px;">
-                <button id="login" onclick="loginaccount()">Login</button>
+                <input id="passwordlogin" style = "padding:5px; border-radius:1px;">
+                <button id="login" onclick="loginaccount()" style = "padding:5px; border-radius:1px;">Login</button>
                 
+                </div>
+
             </div>
+
+
         </div>
         <div id="dashboard" style="display:none;">
             <button id="showinfo" style = "padding:5px; margin:5px; border-radius:1px;" > Show User Information</button>
