@@ -54,10 +54,45 @@ div#createdashboard p{
     font-size: 20px;
 }
 
+div#createdashboard{
+    display: flex;
+    border: 2px solid rgb(106, 157, 118);
+    width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 2px;
+    p{
+        color: rgb(0, 0, 0);
+    }
+    background-image: url("minecraft.png");
+    background-size: cover;
+    background-position: center;
+
+}
+div#logindashboard{
+    display: flex;
+    border: 2px solid rgb(106, 157, 118);
+    width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 2px;
+    p{
+        color: rgb(0, 0, 0);
+    }
+    background-image: url("minecraft.png");
+    background-size: cover;
+}
+
+div#logindashboard p{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 #accbtns{
 
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
     margin: 5px auto; margin-top: 10px ;
     margin-bottom: 10px;
