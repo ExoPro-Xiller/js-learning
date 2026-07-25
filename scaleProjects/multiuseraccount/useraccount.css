@@ -30,8 +30,8 @@ button{
 input{
     background: rgba(255,255,255,0.2);
     border-radius: 8px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 p,h1,button{
