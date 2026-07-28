@@ -1,89 +1,97 @@
 @font-face {
-      font-family: 'Minecraft';
-      src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
+    font-family: 'Minecraft';
+    src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-@keyframes fadeIn{
-    from{
+
+@keyframes fadeIn {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
 
-button{
+button {
     font-weight: 500;
     font-size: 17px;
-    background: rgba(255,255,255,0.4);
-    cursor:pointer;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
 }
+
 #createdashboard,
 #logindashboard,
-#info{
+#info {
     animation: fadeIn 0.4s ease;
 }
 
 
 
-input{
-    background: rgba(255,255,255,0.2);
+input {
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
 
-p,h1,button{
+p,
+h1,
+button {
     text-align: center;
 }
 
-h1{
+h1 {
     font-size: 45px;
     font-weight: 500;
 }
 
-input{
+input {
     border: 2px solid black;
     border-radius: 2px;
     display: block;
     margin: 10px auto;
 }
 
-input:hover{
+input:hover {
     border: 3px solid rgb(76, 162, 76);
     border-radius: 3px;
 }
 
-button:hover{
+button:hover {
     border: 3px solid rgb(76, 162, 76);
     border-radius: 10px;
 
 }
 
-button,h1,p{
+button,
+h1,
+p {
     text-decoration: underline;
     font-family: "Minecraft";
 
 }
 
-button{
+button {
     text-decoration: none;
 }
 
-#login,#create_process{
+#login,
+#create_process {
     display: block;
     width: 180px;
     margin: 10px auto;
 }
 
-div#createdashboard p{
+div#createdashboard p {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
 }
 
-div#createdashboard{
+div#createdashboard {
     display: flex;
     border: 2px solid rgb(0, 0, 0);
     width: 400px;
@@ -91,53 +99,60 @@ div#createdashboard{
     margin: 20px auto;
     padding: 20px;
     border-radius: 2px;
-    p{
+
+    p {
         color: rgb(0, 0, 0);
     }
+
     background-image: url("minecraft.png");
     background-size: cover;
     background-position: center;
 
 }
-div#logindashboard{
+
+div#logindashboard {
     display: flex;
     border: 2px solid rgb(0, 0, 0);
     width: 450px;
     height: 400px;
     margin: 20px auto;
     border-radius: 2px;
-    p{
+
+    p {
         color: rgb(0, 0, 0);
     }
+
     background-image: url("minecraft.png");
     background-size: cover;
 }
 
-div#logindashboard p{
+div#logindashboard p {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
 }
 
-#accbtns{
+#accbtns {
 
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 5px auto; margin-top: 10px ;
+    margin: 5px auto;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* After LOGGIN */
 
-#dashboardbtn{
+#dashboardbtn {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 10px auto;
 
 }
-#info{
+
+#info {
     border: 2px solid;
     width: 400px;
     height: 350px;
@@ -147,16 +162,17 @@ div#logindashboard p{
     background-position: center;
 }
 
-#infotext{
+#infotext {
 
     text-decoration: none;
     padding-top: 90px;
 }
-#info p{
+
+#info p {
     text-decoration: none;
     font-size: 18px;
 }
 
-#logindashboard{
+#logindashboard {
     padding-top: 90px;
 }
