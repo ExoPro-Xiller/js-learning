@@ -20,109 +20,110 @@
 
         <section class="profile-card">
 
-    <div class="profile-main">
+            <div class="profile-main">
 
-        <div class="profile-image">
-            <img src="https://avatars.githubusercontent.com/u/285414722?v=4" alt="Profile picture">
-        </div>
-
-        <div class="profile-info">
-            <h2 id="name">Ahmad Abdullah Khalid</h2>
-            
-            
-            <p class="description">
-                Learning web development and building cool things with
-                HTML, CSS and JavaScript.
-            </p>
-            <h3 class ="hub">GitHub: <a href="https://github.com/ExoPro-Xiller/js-learning/tree/main/">ExoPro-Xiller</a></h3>
-            <h3 class ="hub">Email: ahmadkhalid2802@gmail.com</h3>
-        </div>
-
-    </div>
-
-    <div class="skills">
-        <span id="spa">Skills :</span>
-
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>SQL</span>
-    </div>
-
-</section>
-        
-        
-        <button id="profile">View Profile</button>
-<div id="aboutme">
-        <section id="about">
-
-            <h2 id="me">About Me</h2>
-
-            <p id="current">
-                I'm currently learning web development and experimenting
-                and building different projects.
-                My goal is to become a full-stack developer.
-            </p>
-<hr>
-        </section>
-
-
-        <section class="projects">
-
-            <h2 id="proj">My Projects</h2>
-
-            <div class="project-container">
-
-                <div id="multiuseraccount">
-                    <h3 class="projhead">Multi-user Account:</h3>
-                    <p class="projp">
-                        A JavaScript account system using LocalStorage.
-                    </p>
-                    <a href="https://github.com/ExoPro-Xiller/js-learning/tree/main/scaleProjects/multiuseraccount">
-                    <button class="projbtn" >View Project</button>
-                    </a>
+                <div class="profile-image">
+                    <img src="https://avatars.githubusercontent.com/u/285414722?v=4" alt="Profile picture">
                 </div>
-<hr>
-                <div id="calculator">
-                    <h3 class="projhead">Calculator:</h3>
-                    <p class="projp">
-                        A simple calculator made with JavaScript.
+
+                <div class="profile-info">
+                    <h2 id="name">Ahmad Abdullah Khalid</h2>
+
+
+                    <p class="description">
+                        Learning web development and building cool things with
+                        HTML, CSS and JavaScript.
                     </p>
-                    <a href="https://github.com/ExoPro-Xiller/js-learning/tree/main/Practice/SmolCalculator">
-                    <button class="projbtn">View Project</button>
-                </a>
-                </div>
-<hr>
-                <div id="todo" >
-                    <h3 class="projhead">Todo List:</h3>
-                    <p class="projp">
-                        A Todo List Application made with JavaScript.
-                    </p>
-                    <button class="projbtn" onclick="alert('Yet to be Added!')">View Project</button>
+                    <h3 class="hub">GitHub: <a
+                            href="https://github.com/ExoPro-Xiller/js-learning/tree/main/">ExoPro-Xiller</a></h3>
+                    <h3 class="hub">Email: ahmadkhalid2802@gmail.com</h3>
                 </div>
 
             </div>
 
+            <div class="skills">
+                <span id="spa">Skills :</span>
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>SQL</span>
+            </div>
+
         </section>
 
+
+        <button id="profile">View Profile</button>
+        <div id="aboutme">
+            <section id="about">
+
+                <h2 id="me">About Me</h2>
+
+                <p id="current">
+                    I'm currently learning web development and experimenting
+                    and building different projects.
+                    My goal is to become a full-stack developer.
+                </p>
+                <hr>
+            </section>
+
+
+            <section class="projects">
+
+                <h2 id="proj">My Projects</h2>
+
+                <div class="project-container">
+
+                    <div id="multiuseraccount">
+                        <h3 class="projhead">Multi-user Account:</h3>
+                        <p class="projp">
+                            A JavaScript Multi-user-account system using LocalStorage.
+                        </p>
+                        <a href="https://github.com/ExoPro-Xiller/js-learning/tree/main/scaleProjects/multiuseraccount">
+                            <button class="projbtn">View Project</button>
+                        </a>
+                    </div>
+
+                    <div id="calculator">
+                        <h3 class="projhead">Calculator:</h3>
+                        <p class="projp">
+                            A simple calculator made with JavaScript.
+                        </p>
+                        <a href="https://github.com/ExoPro-Xiller/js-learning/tree/main/Practice/SmolCalculator">
+                            <button class="projbtn">View Project</button>
+                        </a>
+                    </div>
+
+                    <div id="todo">
+                        <h3 class="projhead">Todo List:</h3>
+                        <p class="projp">
+                            A Todo List Application made with JavaScript.
+                        </p>
+                        <button class="projbtn" onclick="alert('Yet to be Added!')">View Project</button>
+                    </div>
+
+                </div>
+
+            </section>
+
     </main>
-</div>
+    </div>
 
     <footer>
         <p>Made while learning CSS ❤️</p>
     </footer>
-<script>
-   const aboutme = document.getElementById('aboutme');
-   const profbtn = document.getElementById('profile');
-   profbtn.addEventListener('click', function(){
-    if(aboutme.style.display == "none"){
-        aboutme.style.display = "block"
-    }else aboutme.style.display = "none"
-   })
-    
+    <script>
+        const aboutme = document.getElementById('aboutme');
+        const profbtn = document.getElementById('profile');
+        profbtn.addEventListener('click', function () {
+            if (aboutme.style.display == "none") {
+                aboutme.style.display = "block"
+            } else aboutme.style.display = "none"
+        })
 
 
-</script>
+
+    </script>
 </body>
 
 </html>
