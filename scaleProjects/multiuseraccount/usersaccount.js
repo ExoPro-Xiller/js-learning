@@ -1,11 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
-let currentuser;
-for (const user of users) {
-    if (user.Email === (localStorage.getItem("currentUserEmail"))) {
-        currentuser = user;
-        break;
-    }
-}
+const currentUser = users.find(user => user.Email === localStorage.getItem("currentUserEmail"));
 
 function saveUsers() {
     localStorage.setItem("users", JSON.stringify(users));
@@ -142,7 +136,7 @@ window.onload = function () {
 
 showinfo.addEventListener('click', function () {
 
-    if (!currentuser) {
+    if (!currentUser) {
         alert("no user available");
         return;
     }
@@ -150,8 +144,8 @@ showinfo.addEventListener('click', function () {
         info.style.display = "block";
     } else info.style.display = "none";
     info.innerHTML = `<div id = "infotext">
-                                <p><b>Name :</b>${currentuser.Name}
-                                <p><b>Email :</b>${currentuser.Email}</p>
+                                <p><b>Name :</b>${currentUser.Name}
+                                <p><b>Email :</b>${currentUser.Email}</p>
                         </div>`
 
 
