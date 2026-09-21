@@ -13,21 +13,21 @@ My long-term goal is to become a **full-stack developer**, starting with strong 
 The general roadmap I'm following is:
 
 JavaScript Fundamentals
-        ↓
+        ->
 DOM & Browser APIs
-        ↓
+        ->
 Larger Vanilla JS Projects
-        ↓
+        ->
 Async JavaScript & APIs
-        ↓
+        ->
 Modules & Code Organization
-        ↓
+        ->
 React
-        ↓
+        ->
 Node.js / Express
-        ↓
+        ->
 Databases
-        ↓
+        ->
 Full-Stack Applications
 
 The focus is on understanding the fundamentals before relying heavily on frameworks.
