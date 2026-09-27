@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
     <link rel="stylesheet" href="authentication.css">
 </head>
+
 <body>
     <h1>Login or Sign Up</h1>
-    <button id="createaccbtn">Create Account</button>
-    <form id="loginForm">
-        <p  id="authcheck"></p>
+    <div id="btns">
+        <button id="createaccbtn">Create Account</button>
+        <button id="loginbtn">Login</button>
+        <button onclick="logout()" id="logout">Logout</button>
+    </div>
+    <form id="createAccountForm">
+        <p id="authcheck"></p>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
@@ -22,6 +28,19 @@
         <br>
         <button type="submit" id="submitbtn">Login</button>
     </form>
+    <form id="loginForm">
+        <p id="authcheck"></p>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <br>
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+        <br>
+        <button type="submit" id="login">Login</button>
+    </form>
+    <div id="userInfo">
+    </div>
+
 
     <script src="authentication.js"></script>
 </body>
