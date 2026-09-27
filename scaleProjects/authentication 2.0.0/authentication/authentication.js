@@ -1,1 +1,0 @@
-//ADD : session storage, array methods, try password encryption, better UI, error handling using try catch.

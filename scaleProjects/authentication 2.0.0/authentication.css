@@ -1,0 +1,51 @@
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+/* 1. Remove the combined rule or change it to target elements properly */
+label {
+  display: block;
+  width: 290px;       
+  margin: 10px auto 2px auto; 
+   
+}
+
+
+#loginForm input {
+  display: block;
+  margin: 10px auto 10px auto; 
+  padding: 10px;
+  width: 350px;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}   
+#loginForm input,#createaccbtn, #submitbtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+#loginForm input{
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+}
+#loginForm{
+    padding-top: 20px;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    height: 300px  
+}
+
+#submitbtn{
+    padding: 5px;
+    width: 100px;  
+}

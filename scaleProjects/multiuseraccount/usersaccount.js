@@ -71,10 +71,10 @@ function createaccount() {
         return;
     }
     let existuser = users.find(user => user.Email === emailinput.value || user.Name === userinput.value);
-        if (existuser) {
-            alert("Account Already Exists");
-            return;
-        }
+    if (existuser) {
+        alert("Account Already Exists");
+        return;
+    }
 
 
     const newUser = new User(
@@ -110,10 +110,10 @@ function loginaccount() {
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("currentUserEmail", user.Email);
         window.location.reload();
-    }else {
-            alert("Invalid Credentials");
-            return;
-        }
+    } else {
+        alert("Invalid Credentials");
+        return;
+    }
 }
 function log_out() {
     if (confirm("Are You Sure you want to Log Out ?")) {
