@@ -16,7 +16,7 @@ function initFormView() {
     // Hide login form by default, show create account
     loginForm.style.display = "none";
     form.style.display = "block";
-}
+} 
 initFormView();
 
 // Miscellaneous Functions 
