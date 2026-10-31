@@ -5,7 +5,6 @@ fileInput.addEventListener('change', (event) => {
     const files = event.target.files;
     if (files.length === 0) return;
 
-    // Grab the first File object from the FileList
     for(const file of files){
         const duplicatefile = filedata.some(existfile => existfile.name === file.name && existfile.size === file.size && existfile.type === file.type && existfile.lastModified === file.lastModified);
 
@@ -19,7 +18,6 @@ fileInput.addEventListener('change', (event) => {
         }else alert(`File ${file.name} already exists in local storage.`);
     }
 
-    // LOG THE OBJECT DIRECTLY (Do not use .toString() or template strings)
     localStorage.setItem('filedata', JSON.stringify(filedata));
     console.log("check local storage");
     console.log(filedata);
